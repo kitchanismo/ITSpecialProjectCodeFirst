@@ -1,0 +1,482 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3B1AD88D-ED49-4023-B35C-9B3B7C73BE3C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ITSpecialProject</RootNamespace>
+    <AssemblyName>ITSpecialProject</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ValueTuple">
+      <HintPath>..\..\..\..\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="zxing, Version=0.16.4.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.4\lib\net461\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.4.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.4\lib\net461\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commons\Enums\AlertType.cs" />
+    <Compile Include="Commons\Enums\DialogButton.cs" />
+    <Compile Include="Commons\Enums\DialogButtons.cs" />
+    <Compile Include="Commons\Enums\DialogType.cs" />
+    <Compile Include="Commons\Enums\DragState.cs" />
+    <Compile Include="Commons\Enums\ColorCombination.cs" />
+    <Compile Include="Commons\Enums\StreamType.cs" />
+    <Compile Include="Commons\Helpers\ColorHelper.cs" />
+    <Compile Include="Commons\Helpers\EnumHelper.cs" />
+    <Compile Include="Commons\Helpers\FontHelper.cs" />
+    <Compile Include="Commons\Helpers\MessageHelper.cs" />
+    <Compile Include="Commons\Helpers\PathHelper.cs" />
+    <Compile Include="Commons\Helpers\TransitionHelper.cs" />
+    <Compile Include="Commons\Extensions\IModule.cs" />
+    <Compile Include="Components\Classes\Gradient.cs" />
+    <Compile Include="Components\FlatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\FlatForm.Designer.cs">
+      <DependentUpon>FlatForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\FlatGlowButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\FlatPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\FlatRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\Interfaces\IColor.cs" />
+    <Compile Include="Components\Interfaces\IFont.cs" />
+    <Compile Include="Components\Interfaces\IGradient.cs" />
+    <Compile Include="Components\Interfaces\IEllipse.cs" />
+    <Compile Include="Components\Popups\FlatMessageAlert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Popups\FlatMessageAlert.Designer.cs">
+      <DependentUpon>FlatMessageAlert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Popups\FlatMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Popups\FlatMessageBox.Designer.cs">
+      <DependentUpon>FlatMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Components\FlatCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\FlatButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\FlatComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\FlatNavigationPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\FlatPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\FlatTable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\FlatTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\FlatGradientButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Monostate\AccountSession.cs" />
+    <Compile Include="Views\Accounts\AccountCardView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Accounts\AccountCardView.Designer.cs">
+      <DependentUpon>AccountCardView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Accounts\AccountCardCtrl.Designer.cs">
+      <DependentUpon>AccountCardView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Accounts\AccountView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Accounts\AccountView.Designer.cs">
+      <DependentUpon>AccountView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Accounts\AccountCtrl.Designer.cs">
+      <DependentUpon>AccountView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Commons\AboutView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Commons\AboutView.Designer.cs">
+      <DependentUpon>AboutView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Commons\AboutCtrl.Designer.cs">
+      <DependentUpon>AboutView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Commons\DbConfigurationView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Commons\DbConfigurationView.Designer.cs">
+      <DependentUpon>DbConfigurationView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Commons\DbConfigurationCtrl.Designer.cs">
+      <DependentUpon>DbConfigurationView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Main\Modules.cs" />
+    <Compile Include="Views\Main\NavigationView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Main\NavigationView.Designer.cs">
+      <DependentUpon>NavigationView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Main\NavigationCtrl.Designer.cs">
+      <DependentUpon>NavigationView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menus\CreateMenuView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Menus\CreateMenuView.Designer.cs">
+      <DependentUpon>CreateMenuView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menus\CreateMenuCtrl.Designer.cs">
+      <DependentUpon>CreateMenuView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menus\MenuView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Menus\MenuView.Designer.cs">
+      <DependentUpon>MenuView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menus\MenuCtrl.Designer.cs">
+      <DependentUpon>MenuView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PointOfSale\Invoice.cs" />
+    <Compile Include="Views\PointOfSale\InvoiceCardView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\PointOfSale\InvoiceCardView.Designer.cs">
+      <DependentUpon>InvoiceCardView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PointOfSale\InvoiceCardCtrl.Designer.cs">
+      <DependentUpon>InvoiceCardView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Utilities\ImageStreamView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Utilities\ImageStreamView.Designer.cs">
+      <DependentUpon>ImageStreamView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Utilities\ImageStreamCtrl.Designer.cs">
+      <DependentUpon>ImageStreamView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Commons\LockScreenView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Commons\LockScreenView.Designer.cs">
+      <DependentUpon>LockScreenView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Commons\LoginView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Commons\LoginView.Designer.cs">
+      <DependentUpon>LoginView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Commons\LoginCtrl.Designer.cs">
+      <DependentUpon>LoginView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Main\MainView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Main\MainView.Designer.cs">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Main\MainCtrl.Designer.cs">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Commons\SplashScreenView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Commons\SplashScreenView.Designer.cs">
+      <DependentUpon>SplashScreenView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PointOfSale\FilterView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\PointOfSale\FilterView.Designer.cs">
+      <DependentUpon>FilterView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PointOfSale\FilterCtrl.Designer.cs">
+      <DependentUpon>FilterView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PointOfSale\ItemCardView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\PointOfSale\ItemCardView.Designer.cs">
+      <DependentUpon>ItemCardView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PointOfSale\ItemCardCtrl.Designer.cs">
+      <DependentUpon>ItemCardView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PointOfSale\MenuCategoryView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\PointOfSale\MenuCategoryView.Designer.cs">
+      <DependentUpon>MenuCategoryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PointOfSale\MenuCategoryCtrl.Designer.cs">
+      <DependentUpon>MenuCategoryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PointOfSale\PointOfSaleView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\PointOfSale\PointOfSaleView.Designer.cs">
+      <DependentUpon>PointOfSaleView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PointOfSale\PointOfSaleCtrl.Designer.cs">
+      <DependentUpon>PointOfSaleView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Utilities\PreloaderView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Utilities\PreloaderView.Designer.cs">
+      <DependentUpon>PreloaderView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Utilities\PaginatorView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Utilities\PaginatorView.Designer.cs">
+      <DependentUpon>PaginatorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Utilities\PaginatorCtrl.Designer.cs">
+      <DependentUpon>PaginatorView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Components\FlatForm.resx">
+      <DependentUpon>FlatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Popups\FlatMessageAlert.resx">
+      <DependentUpon>FlatMessageAlert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Popups\FlatMessageBox.resx">
+      <DependentUpon>FlatMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Views\Accounts\AccountCardView.resx">
+      <DependentUpon>AccountCardView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Accounts\AccountView.resx">
+      <DependentUpon>AccountView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Commons\AboutView.resx">
+      <DependentUpon>AboutView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Commons\DbConfigurationView.resx">
+      <DependentUpon>DbConfigurationView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Main\NavigationView.resx">
+      <DependentUpon>NavigationView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Menus\CreateMenuView.resx">
+      <DependentUpon>CreateMenuView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Menus\MenuView.resx">
+      <DependentUpon>MenuView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PointOfSale\InvoiceCardView.resx">
+      <DependentUpon>InvoiceCardView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Utilities\ImageStreamView.resx">
+      <DependentUpon>ImageStreamView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Commons\LockScreenView.resx">
+      <DependentUpon>LockScreenView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Commons\LoginView.resx">
+      <DependentUpon>LoginView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Main\MainView.resx">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Commons\SplashScreenView.resx">
+      <DependentUpon>SplashScreenView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PointOfSale\FilterView.resx">
+      <DependentUpon>FilterView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PointOfSale\ItemCardView.resx">
+      <DependentUpon>ItemCardView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PointOfSale\MenuCategoryView.resx">
+      <DependentUpon>MenuCategoryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PointOfSale\PointOfSaleView.resx">
+      <DependentUpon>PointOfSaleView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Utilities\PreloaderView.resx">
+      <DependentUpon>PreloaderView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Utilities\PaginatorView.resx">
+      <DependentUpon>PaginatorView.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Builders\" />
+    <Folder Include="Reports\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\ITSpecialProject.Core.Model.AccountAccess.datasource" />
+    <None Include="Properties\DataSources\ITSpecialProject.Core.Model.Menu.datasource" />
+    <None Include="Properties\DataSources\ITSpecialProject.Core.Model.MenuCategory.datasource" />
+    <None Include="Properties\DataSources\ITSpecialProject.Core.Model.MenuPrice.datasource" />
+    <None Include="Resources\Amigoo_BG_Blur.png" />
+    <None Include="Resources\Amigoo_Logo_Orig.jpg" />
+    <None Include="Resources\Amigoo_Logo_Circle.png" />
+    <None Include="Resources\Amigoo_BG_Orig.jpg" />
+    <None Include="Resources\Amigoo_Banner_Orig.jpg" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\Database_TransBG.png" />
+    <None Include="Resources\Warning_48.png" />
+    <None Include="Resources\Users_96.png" />
+    <None Include="Resources\Update_48.png" />
+    <None Include="Resources\Refresh_32.png" />
+    <None Include="Resources\Question_48.png" />
+    <None Include="Resources\Picture_100.png" />
+    <None Include="Resources\Notification_48.png" />
+    <None Include="Resources\Message_48.png" />
+    <None Include="Resources\Maintenance_48.png" />
+    <None Include="Resources\Info_48.png" />
+    <None Include="Resources\Help_32.png" />
+    <None Include="Resources\Hand_48.png" />
+    <None Include="Resources\Error_48.png" />
+    <None Include="Resources\Disconnected_42.png" />
+    <None Include="Resources\Delete_48.png" />
+    <None Include="Resources\Contact_32.png" />
+    <None Include="Resources\Connected_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Support_32.png" />
+    <None Include="Resources\Manage_32.png" />
+    <None Include="Resources\Home_32.png" />
+    <None Include="Resources\Settings_32.png" />
+    <None Include="Resources\Reports_32.png" />
+    <None Include="Resources\Lock_32.png" />
+    <None Include="Resources\Default_100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CancelColor_24.png" />
+    <None Include="Resources\IncreaseColor_24.png" />
+    <None Include="Resources\DecreaseColor_24.png" />
+    <None Include="Resources\Menu_64.png" />
+    <None Include="Resources\SearchColor_24.png" />
+    <None Include="Resources\Account_100.png" />
+    <None Include="Resources\EditColor_24.png" />
+    <None Include="Resources\DeleteColor_24.png" />
+    <None Include="Resources\ClearColor_32.png" />
+    <None Include="Resources\LockColor_32.png" />
+    <None Include="Resources\UnlockColor_32.png" />
+    <None Include="Resources\RefreshLight_32.png" />
+    <None Include="Resources\Preloader_64.png" />
+    <None Include="Resources\PreloaderColor_64.png" />
+    <None Include="Resources\POS_32.png" />
+    <None Include="Resources\Logout_32.png" />
+    <None Include="Resources\Exit_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataLayer\DataLayer.csproj">
+      <Project>{5a5c4c14-2597-4940-91d3-7c70a3788671}</Project>
+      <Name>DataLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

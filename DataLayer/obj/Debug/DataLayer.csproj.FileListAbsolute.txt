@@ -1,0 +1,16 @@
+C:\Users\Betsayda\Desktop\git clones\ITSpecialProject\ITSpecialProject\DataLayer\obj\Debug\DataLayer.csprojAssemblyReference.cache
+C:\Users\Betsayda\Desktop\git clones\ITSpecialProject\ITSpecialProject\DataLayer\obj\Debug\DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\Betsayda\Desktop\git clones\ITSpecialProject\ITSpecialProject\DataLayer\bin\Debug\DataLayer.dll.config
+C:\Users\Betsayda\Desktop\git clones\ITSpecialProject\ITSpecialProject\DataLayer\bin\Debug\DataLayer.dll
+C:\Users\Betsayda\Desktop\git clones\ITSpecialProject\ITSpecialProject\DataLayer\bin\Debug\DataLayer.pdb
+C:\Users\Betsayda\Desktop\git clones\ITSpecialProject\ITSpecialProject\DataLayer\bin\Debug\EntityFramework.dll
+C:\Users\Betsayda\Desktop\git clones\ITSpecialProject\ITSpecialProject\DataLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Betsayda\Desktop\git clones\ITSpecialProject\ITSpecialProject\DataLayer\bin\Debug\System.ValueTuple.dll
+C:\Users\Betsayda\Desktop\git clones\ITSpecialProject\ITSpecialProject\DataLayer\bin\Debug\EntityFramework.xml
+C:\Users\Betsayda\Desktop\git clones\ITSpecialProject\ITSpecialProject\DataLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Betsayda\Desktop\git clones\ITSpecialProject\ITSpecialProject\DataLayer\bin\Debug\System.ValueTuple.xml
+C:\Users\Betsayda\Desktop\git clones\ITSpecialProject\ITSpecialProject\DataLayer\obj\Debug\DataLayer.csproj.CopyComplete
+C:\Users\Betsayda\Desktop\git clones\ITSpecialProject\ITSpecialProject\DataLayer\obj\Debug\DataLayer.dll
+C:\Users\Betsayda\Desktop\git clones\ITSpecialProject\ITSpecialProject\DataLayer\obj\Debug\DataLayer.pdb
+C:\Users\Betsayda\Desktop\git clones\ITSpecialProject\ITSpecialProject\DataLayer\obj\Debug\DataLayer.Migrations.InitialModel.resources
+C:\Users\Betsayda\Desktop\git clones\ITSpecialProject\ITSpecialProject\DataLayer\obj\Debug\DataLayer.csproj.GenerateResource.cache
