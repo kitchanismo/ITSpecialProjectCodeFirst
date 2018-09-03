@@ -1,6 +1,5 @@
 ﻿using ITSpecialProject.Commons.Helpers;
 using ITSpecialProject.Components;
-using ITSpecialProject.Extensions;
 using DataLayer.Extensions;
 using System;
 using System.Collections.Generic;
@@ -33,9 +32,7 @@ namespace ITSpecialProject.Views.PointOfSale
                     {
                         SelectMenuCategoryButton(button);
 
-                        var subMenuOrderBy = button.Text.Replace(" ", string.Empty);
-
-                        var type = Type.GetType(string.Join(string.Empty, Helper.MenuOrderByPath, subMenuOrderBy));
+                        var type = Helper.GetMenuOrderByType(button.Text);
 
                         _selectedOrder = (IMenuOrder) Activator.CreateInstance(type);
                     };

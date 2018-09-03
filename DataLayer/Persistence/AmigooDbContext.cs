@@ -17,10 +17,14 @@ namespace DataLayer.Persistence
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            //1 to 1 relationship between Order n OrderPayment
             modelBuilder.Entity<Order>()
                 .HasRequired(o => o.OrderPayment)
                 .WithRequiredPrincipal(o => o.Order);
-             
+
+            //Fullname is not included in fields
+            modelBuilder.Entity<Account>()
+                .Ignore(p => p.FullName);
         }
 
         public virtual DbSet<AccountLog> AccountLogs { get; set; }

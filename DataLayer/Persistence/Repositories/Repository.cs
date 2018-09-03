@@ -13,54 +13,57 @@ namespace DataLayer.Persistence.Repositories
     {
         protected readonly DbContext Context;
 
+        private readonly DbSet<TEntity> _entities;
+
         public Repository(DbContext context)
         {
             Context = context;
+            _entities = Context.Set<TEntity>();
         }
 
         public TEntity GetById(int id)
         {
-            return Context.Set<TEntity>().Find(id);
+            return _entities.Find(id);
         }
 
         public IEnumerable<TEntity> GetAll()
         {
-            return Context.Set<TEntity>().ToList();
+            return _entities.ToList();
         }
 
         public IEnumerable<TEntity> GetAll(int skip, int take = 50)
         {
-            return Context.Set<TEntity>().OrderBy(e=>e.Id).Skip(skip).Take(take).ToList();
+            return _entities.OrderBy(e=>e.Id).Skip(skip).Take(take).ToList();
         }
 
         public int Count()
         {
-            return Context.Set<TEntity>().Count();
+            return _entities.Count();
         }
 
         public IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate)
         {
-            return Context.Set<TEntity>().Where(predicate).ToList();
+            return _entities.Where(predicate).ToList();
         }
 
         public void Add(TEntity entity)
         {
-            Context.Set<TEntity>().Add(entity);
+            _entities.Add(entity);
         }
 
         public void AddRange(IEnumerable<TEntity> entities)
         {
-            Context.Set<TEntity>().AddRange(entities);
+            _entities.AddRange(entities);
         }
 
         public void Remove(TEntity entity)
         {
-            Context.Set<TEntity>().Remove(entity);
+            _entities.Remove(entity);
         }
 
         public void RemoveRange(IEnumerable<TEntity> entities)
         {
-            Context.Set<TEntity>().RemoveRange(entities);
+            _entities.RemoveRange(entities);
         }
     }
 }

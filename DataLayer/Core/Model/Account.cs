@@ -14,8 +14,7 @@ namespace DataLayer.Core.Model
     
     public partial class Account : IEntity
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Account()
+       public Account()
         {
             this.AccountLogs = new HashSet<AccountLog>();
             this.ConsumableOrders = new HashSet<ConsumableOrder>();
@@ -23,7 +22,8 @@ namespace DataLayer.Core.Model
             this.AccountAccesses = new HashSet<AccountAccess>();
             this.AuditTrails = new HashSet<AuditTrail>();
         }
-    
+
+
         public int Id { get; set; }
         public string Rfid { get; set; }
         public string UserName { get; set; }
@@ -35,16 +35,17 @@ namespace DataLayer.Core.Model
         public string ProfileImage { get; set; }
         public System.DateTime CreationDate { get; set; }
         public bool Flag { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+
+        public string FullName { get => $"{FirstName} {LastName}"; } 
+
         public virtual ICollection<AccountLog> AccountLogs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+
         public virtual ICollection<ConsumableOrder> ConsumableOrders { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+
         public virtual ICollection<Order> Orders { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+
         public virtual ICollection<AccountAccess> AccountAccesses { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+
         public virtual ICollection<AuditTrail> AuditTrails { get; set; }
     }
 }

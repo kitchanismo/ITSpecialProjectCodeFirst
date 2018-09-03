@@ -1,8 +1,9 @@
-﻿using DataLayer.Helpers;
+﻿
 using DataLayer.Core;
 using DataLayer.Core.Model;
 using DataLayer.Persistence.Repositories;
 using System;
+using DataLayer.Commons;
 
 namespace DataLayer.Persistence
 {
@@ -41,7 +42,7 @@ namespace DataLayer.Persistence
 
         public bool TestConnection()
         {
-            return DbHelper.CheckConnection(_context);
+            return Helper.CheckConnection(_context);
         }
 
         public int SaveChanges()

@@ -6,7 +6,7 @@ using DataLayer.Core;
 using DataLayer.Core.Model;
 using DataLayer.Filters;
 using DataLayer.Persistence;
-using ITSpecialProject.Extensions;
+using DataLayer.Extensions;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;

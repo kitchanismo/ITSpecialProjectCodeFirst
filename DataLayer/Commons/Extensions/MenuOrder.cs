@@ -1,10 +1,9 @@
-﻿using ITSpecialProject.Extensions;
+﻿using DataLayer.Extensions;
 using DataLayer.Core.Model;
 using System.Collections.Generic;
 using System.Linq;
-using DataLayer.Extensions;
 
-namespace ITSpecialProject.Extensions
+namespace DataLayer.Extensions
 {
     public class MenuOrderByAscending : IMenuOrder
     {

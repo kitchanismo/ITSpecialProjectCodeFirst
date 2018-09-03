@@ -51,7 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commons\Helpers.cs" />
+    <Compile Include="Commons\Helper.cs" />
     <Compile Include="Core\Model\Account.cs" />
     <Compile Include="Core\Model\AccountAccess.cs" />
     <Compile Include="Core\Model\AccountLog.cs" />
@@ -64,7 +64,7 @@
     <Compile Include="Core\Model\Discount.cs" />
     <Compile Include="Core\Model\DiscountLog.cs" />
     <Compile Include="Core\Model\DiscountType.cs" />
-    <Compile Include="Core\Model\IEntity.cs" />
+    <Compile Include="Core\IEntity.cs" />
     <Compile Include="Core\Model\Menu.cs" />
     <Compile Include="Core\Model\MenuCategory.cs" />
     <Compile Include="Core\Model\MenuLog.cs" />
@@ -79,10 +79,9 @@
     <Compile Include="Commons\Extensions\IMenuOrder.cs" />
     <Compile Include="Commons\Extensions\MenuOrder.cs" />
     <Compile Include="Commons\Filters\MenuFilter.cs" />
-    <Compile Include="Commons\DbHelper.cs" />
-    <Compile Include="Migrations\201809031834331_InitialModel.cs" />
-    <Compile Include="Migrations\201809031834331_InitialModel.Designer.cs">
-      <DependentUpon>201809031834331_InitialModel.cs</DependentUpon>
+    <Compile Include="Migrations\201809032041326_InitialModel.cs" />
+    <Compile Include="Migrations\201809032041326_InitialModel.Designer.cs">
+      <DependentUpon>201809032041326_InitialModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistence\AmigooDbContext.cs" />
@@ -100,8 +99,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201809031834331_InitialModel.resx">
-      <DependentUpon>201809031834331_InitialModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201809032041326_InitialModel.resx">
+      <DependentUpon>201809032041326_InitialModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

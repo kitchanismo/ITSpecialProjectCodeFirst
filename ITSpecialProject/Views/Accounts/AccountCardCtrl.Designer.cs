@@ -22,7 +22,7 @@ namespace ITSpecialProject.Views.Accounts
         private void SetAccountDetails()
         {
             lblUserName.Text = _account.UserName;
-           // lblName.Text = _account.GetFullName;
+            lblName.Text = _account.FullName;
 
             if (!string.IsNullOrEmpty(_account.ProfileImage))
             {
