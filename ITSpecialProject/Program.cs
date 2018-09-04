@@ -19,7 +19,7 @@ namespace ITSpecialProject
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new MainView(new Account()));
-            Application.Run(new MainView());
+            Application.Run(new LoginView());
         }
     }
 }
