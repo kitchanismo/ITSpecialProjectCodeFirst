@@ -2,6 +2,8 @@
 # ITSpecialProjectCodeFirst
 
 
+![Scheme](amigoo.PNG)
+
 
 # Getting Started
 
